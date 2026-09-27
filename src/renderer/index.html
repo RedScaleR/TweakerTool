@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TweakerTool</title>
+    <link rel="icon" href="assets/icon.png" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/views.css" />
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <div class="backdrop" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="grid"></div>
+      <div class="noise"></div>
+    </div>
+
+    <div class="app" id="app"></div>
+    <div class="toasts" id="toasts" aria-live="polite"></div>
+
+    <div class="splash" id="splash">
+      <div class="splash-inner">
+        <div class="logo-wrap">
+          <svg class="logo" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="tt-splash" x1="4" y1="2" x2="60" y2="62" gradientUnits="userSpaceOnUse">
+                <stop style="stop-color: var(--accent-2)" />
+                <stop offset="1" style="stop-color: var(--accent)" />
+              </linearGradient>
+            </defs>
+            <rect x="3" y="3" width="58" height="58" rx="18" fill="url(#tt-splash)" />
+            <rect x="3.75" y="3.75" width="56.5" height="56.5" rx="17.25" stroke="#fff" stroke-opacity=".28" stroke-width="1.5" />
+            <path d="M16 23h32M32 23v25" stroke="#fff" stroke-width="6.5" stroke-linecap="round" />
+            <circle cx="42" cy="23" r="8" fill="#fff" />
+            <circle cx="42" cy="23" r="3.2" style="fill: var(--accent)" />
+          </svg>
+        </div>
+        <div class="name">Tweaker<span class="grad-text">Tool</span></div>
+        <div class="bar"><span id="splash-bar" style="--v: 8%"></span></div>
+        <div class="step" id="splash-step">Starting…</div>
+      </div>
+    </div>
+  </body>
+</html>

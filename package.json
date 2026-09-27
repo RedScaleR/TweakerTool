@@ -1,0 +1,60 @@
+{
+  "name": "tweakertool",
+  "productName": "TweakerTool",
+  "version": "1.0.0",
+  "description": "A beautiful all-in-one Windows optimization toolkit: tweaks, cleaner, startup manager, app installer, debloater and system tools.",
+  "author": "RedScaleR",
+  "homepage": "https://github.com/RedScaleR/TweakerTool",
+  "type": "module",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "demo": "electron . --demo",
+    "preview": "node scripts/preview.js",
+    "test": "node --test \"test/*.test.js\"",
+    "dist": "electron-builder --win --publish never"
+  },
+  "build": {
+    "appId": "com.redscaler.tweakertool",
+    "productName": "TweakerTool",
+    "copyright": "Copyright © 2026 RedScaleR",
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "icon": "build/icon.png",
+      "requestedExecutionLevel": "requireAdministrator",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "TweakerTool-Setup-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "TweakerTool-${version}-Portable.${ext}"
+    }
+  },
+  "devDependencies": {
+    "electron": "^44.4.5",
+    "electron-builder": "^26.15.3"
+  }
+}
